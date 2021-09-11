@@ -65,6 +65,8 @@ ul{
     font-size: 22px;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 2px 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 .social-icons i:hover,  .action i:hover{
     transform: rotate(360deg);
@@ -162,6 +164,9 @@ nav .toggle{
     margin-left: 10px;
     padding: 10px 10px;
     cursor: pointer;
+    padding: 4px 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 4px;
 }
 .action , .home-container h4{
    text-align: center;
@@ -212,9 +217,9 @@ nav .toggle{
 }
 .content2 .tabs
 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    text-align: center;
+   align-items: center;
+   justify-content: center;
+    display: flex;
 }
 .content2 .tabs span{
     padding: 3px 10px;
@@ -484,6 +489,17 @@ nav .toggle{
         max-height: 210px;
         margin-top: 23px;
     }
+    .content2 .tabs{
+        flex-direction: column;
+    }
+    .content2 .tabs .tab-items{
+        margin: 7px 0;
+    }
+    .content2 .tabs .tab-items span{
+      font-size: 16px;
+      margin: 8px 0;
+      padding: 2px 4px;
+    }
     .skills-content .skills {
         width: calc(100% - 10px);
     }
@@ -493,6 +509,10 @@ nav .toggle{
     }
     .services-container{
         grid-template-columns: auto;
+    }
+    .services-container .above-i{
+        position: relative;
+        bottom: 39%;
     }
     .home-container h2{
         font-size: 2.1rem;
