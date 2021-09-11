@@ -510,9 +510,10 @@ nav .toggle{
     .services-container{
         grid-template-columns: auto;
     }
-    .services-container .above-i{
-        position: relative;
-        bottom: 39%;
+    .service-content .above-i{
+    padding: 4px 9px;
+    border-radius: 12%;
+    width: auto;
     }
     .home-container h2{
         font-size: 2.1rem;
