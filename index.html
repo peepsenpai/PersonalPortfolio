@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arijit's Portfolio</title>
+
+    <!-- linked css  -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- font awsome icons  -->
     <script src="https://kit.fontawesome.com/a16f8ee6e2.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -15,6 +20,9 @@
 
     <div class="whatsapp-chat">
         <a href="https://wa.me/916297136749"><i class="fab fa-whatsapp"></i></a>
+        <!-- <div class="chat-with-me">
+            <h3>Chat With Me</h3>
+        </div> -->
     </div>
     <div class="social-icons">
         <a href=""><i class="fab fa-facebook-square"></i></a>
@@ -37,15 +45,27 @@
                     <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
                     <li class="nav-item"><a href="#services" class="nav-link">My Services</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"> Reviews</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact Me</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact Me</a></li>
                 </div>
             </ul>
-            <button class="hire-me btn">Hire Me <i class="fas fa-chevron-right"></i></button>
+            <button class="hire-me btn" id="hire-me" onclick="hireMeClick()">Hire Me <i
+                    class="fas fa-chevron-right"></i></button>
         </nav>
     </section>
+    <div class="hiring-content" id="hiring-content">
+        <div class="hire-can-btn" id="hire-can-btn" onclick="hireCancelClick()">
+            <i class="fas fa-times close-icon"></i>
+        </div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ab doloribus nesciunt corrupti nulla dolor
+            molestiae tenetur atque provident cum reprehenderit et omnis dicta suscipit, eos natus harum unde quam
+            laboriosam deleniti saepe inventore sapiente rerum iste. Maxime sequi nisi nesciunt eos expedita nemo ipsam
+            quasi, ducimus commodi iusto atque!</p>
+    </div>
+
+
+    <!-- home  -->
     <section class="home" id="home">
         <div class="home-container">
-            <!-- <h6>Hello</h6> -->
             <h2>Mr. <span class="arijit">Arijit</span> Maiti</h2>
             <div class="dev-cv">
                 <div class="web-d">
@@ -70,7 +90,7 @@
     <!-- about section  -->
     <section class="about-container" id="about">
         <div class="about">
-            <div class="row">
+            <div class="about-row">
                 <div class="title">
                     <h3 class="about-title" data-heading="Info">About Me</h3>
                 </div>
@@ -81,27 +101,29 @@
                 </div>
                 <div class="my-info">
                     <h4>Who am I ?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequuntur? Labore dolorum
-                        aspernatur est cumque! Harum natus fugit doloremque deleniti, voluptates illum neque debitis,
-                        quia culpa, quasi voluptatem eos vel facere. Eveniet, error perspiciatis?
+                    <p>I'm a web Developer who rying to provide value to my clients with my skills. I've 1+ yrs
+                        experience in web designing and development and made 300+ local(offline) clients happy till now.
+                        Want to give my clients the best service in a fair price. YOUR SATISFACTION , MY PRIORITY. Hire
+                        me to give your business a new step.
                     </p>
+                    <div class="corner"> </div>
                 </div>
             </div>
             <div class="content2">
                 <div class="tabs">
                     <div class="tab-items">
-                    <span class="tab-item active" data-target="skills">Skills</span>
+                        <span class="tab-item active" data-target="skills">Skills</span>
                     </div>
                     <div class="tab-items">
-                    <span class="tab-item" data-target="projects">Projects</span>
+                        <span class="tab-item" data-target="projects">Projects</span>
                     </div>
                     <div class="tab-items">
-                    <span class="tab-item" data-target="moreinfo">More Info</span>
+                        <span class="tab-item" data-target="moreinfo">More Info</span>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="about-row">
                 <div class="tab-content active" data-category="skills">
                     <div class="skills-content">
                         <div class="left skills left-skill">
@@ -169,13 +191,12 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="about-row">
                 <div class="project tab-content" data-category="projects">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, quas. Laboriosam similique saepe
-                        voluptatibus quia nemo et, quibusdam repellendus dignissimos, nisi, debitis quod?</p>
+                    <p>ghgfvhgfvhgfv</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="about-row">
                 <div class="moreinfo tab-content" data-category="moreinfo">
                     <h2>fyf</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus et pariatur, sint velit labore
@@ -199,7 +220,7 @@
             <h3 class="service-title">My Services</h3>
         </div>
         <div class="services-container">
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
                     <i class="fas fa-file-code"></i>
                 </div>
@@ -212,11 +233,31 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
-                <i class="fab fa-react"></i>
+                    <i class="fab fa-react"></i>
                 </div>
                 <div class="s-heading">
                     <h2>Single-Page <br> Application</h2>
@@ -227,10 +268,30 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Modern web application in a fair budget</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
-                <i class="fab fa-wordpress"></i>
+                    <i class="fab fa-wordpress"></i>
                 </div>
                 <div class="s-heading">
                     <h2>Wordpress<br> Websites</h2>
@@ -241,11 +302,31 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>responsive website using built-in plugins</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
-                <i class="fas fa-database"></i>
-            </div>
+                    <i class="fas fa-database"></i>
+                </div>
                 <div class="s-heading">
                     <h2>Database <br> Scalibility</h2>
                 </div>
@@ -255,8 +336,28 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Advance Backend system using php</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
                     <i class="fab fa-shopify"></i>
                 </div>
@@ -269,8 +370,28 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Get budhet friendly e-commerce store</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-content uiux">
+            <div class="service-content">
                 <div class="above-i">
                     <i class="fab fa-uikit"></i>
                 </div>
@@ -283,16 +404,91 @@
                         <i class="fas fa-angle-double-right"></i>
                     </span>
                 </div>
+                <div class="service-list">
+                    <div class="service-list-items">
+                        <p class="service-list-heading">I Offer</p>
+                        <i class="fas fa-times close-icon"></i>
+                        <ul>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>get no sql database</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-arrows-alt"></i>
+                                <p>Devoloping Responsive user Interface</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="title">
+            <h3 class="contact-title" data-heading="How to reach?">Get in touch</h3>
+        </div>
+        <form action="#">
+            <div class="contact-container">
+                <div class="contact-box">
+                    <div class="contact-item">
+                        <div class="contact-heading">
+                            Your Name
+                        </div>
+                        <div class="contact-field">
+                            <input type="text" required placeholder="xyz">
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-heading">
+                            Your Email
+                        </div>
+                        <div class="contact-field">
+                            <input type="email" required placeholder="xyz@gmail.com">
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-heading">
+                            Phone Number
+                        </div>
+                        <div class="contact-field">
+                            <input type="number" required placeholder="+1-234-567-89">
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-heading">
+                            Your website (optional)
+                        </div>
+                        <div class="contact-field">
+                            <input type="text" placeholder="https://">
+                        </div>
+                    </div>
+                </div>
+                <div class="massage-box">
+                    <label for="c-msg" class="contact-heading">Write Your Queries</label>
+                    <textarea name="c-msg" id="c-msg" cols="50" rows="10" placeholder="I wanna ..."></textarea>
+                </div>
+                <div class="form-submit">
+                    <button class="con-submit btn">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
     </section>
 
 
     <div id="scrollBtn">
         <a href="#home"><span><i class="fas fa-arrow-circle-up"></i></span></a>
     </div>
+
     <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
     <script src="logic.js"></script>
+
 </body>
 
 </html>

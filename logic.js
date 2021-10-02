@@ -21,6 +21,18 @@ function actionLink(){
 };
 navLink.forEach(n => n.addEventListener('click', actionLink))
 
+
+// hiring button 
+const  hirecontent = document.getElementById('hiring-content');
+function hireMeClick(){
+   hirecontent.classList.add('active')
+}
+function hireCancelClick(){
+    hirecontent.classList.remove('active')
+
+}
+
+
 // about section
 const aboutTab = ()=>{
     const tabs = document.querySelector('.tabs');
@@ -31,8 +43,9 @@ const aboutTab = ()=>{
             tabs.querySelector('.active').classList.remove('active');
             event.target.classList.add('active');
             
-            // deactivate the other tabs mnd showing another
+            // deactivate the other tabs and showing another
             const contents = event.target.getAttribute("data-target");
+            // here event.target will collect only one single data-target at a time cause above i write only queryselector 
             tabContent.forEach((items)=>{
                 if(contents === items.getAttribute('data-category')){
                     items.classList.add('active')
@@ -62,12 +75,48 @@ function scrollToTop (){
 }
 scrollToTop();
 
+// service section 
+const serviceList = document.querySelectorAll('.service-list'),
+    moreBtn = document.querySelectorAll('.v-btn'),
+    closeBtn = document.querySelectorAll('.close-icon');
+
+
+// const service = function(serviceclick){
+//     serviceList[serviceclick].classList.add('active')
+// } 
+// putting serviceclick in square brackets cause its an array index
+
+
+// M refers here to the button number(array index)
+moreBtn.forEach((mBtn , M)=>{
+    mBtn.addEventListener('click', ()=>{
+        serviceList.forEach((seli, i)=>{
+            if(i === M){
+                seli.classList.add('active')
+            }
+        })
+    })
+})
+
+// removing existing active class 
+closeBtn.forEach((cBtn)=>{
+    cBtn.addEventListener('click', ()=>{
+        serviceList.forEach((sList)=>{
+            sList.classList.remove('active')
+        })
+    })
+})
+
+
+
+
+
 // animation 
 // window.sr = new ScrollReveal({origin:'top',distance: '80px', duration: 2000, reset: true});
 // sr.reveal('.home-container',{});
 // sr.reveal('.home-img',{delay:400});
 
-// sr.reveal('.about-img',{interval:200});
+// sr.reveal('.about-img',{delay:200});
 // sr.reveal('.my-info',{delay:300});
 // sr.reveal('.left-skill',{delay: 100});
 // sr.reveal('.right-skill',{delay: 100});

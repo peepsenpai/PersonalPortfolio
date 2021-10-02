@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -44,14 +45,6 @@ ul{
     font-size: 25px;
     font-weight: bold;
 } 
-.title .about-title::before{
-    content: attr(data-heading);
-    display: block;
-    font-size: 18px;
-    color: rgb(148, 6, 148);
-    border-bottom: 2px solid blueviolet;
-}
-
 
 /* scial icons  */
 .social-icons{
@@ -66,7 +59,8 @@ ul{
     margin-bottom: 10px;
     cursor: pointer;
     padding: 2px 2px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 10px rgb(204 2 236 / 50%);
+    border-radius: 5px;
 }
 .social-icons i:hover,  .action i:hover{
     transform: rotate(360deg);
@@ -83,6 +77,18 @@ ul{
     border-radius: 100%;
     color: white;
 }
+/* .chat-with-me{
+    position: relative;
+    right: 20%;
+    display: none;
+}
+.chat-with-me h3{
+    display: inline-block;
+}
+.whatsapp-chat:hover .chat-with-me{
+    display: block;
+} */
+
 
 /* navigation  */
 .header{
@@ -147,6 +153,14 @@ nav .toggle{
 }
 
 
+/* hiring content  */
+.hiring-content{
+    position: relative;
+    top: 10vh;
+    display: none;
+}.hiring-content.active{
+    display: block;
+}
 
 /* home  */
 .home{
@@ -165,8 +179,8 @@ nav .toggle{
     padding: 10px 10px;
     cursor: pointer;
     padding: 4px 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    border-radius: 4px;
+    box-shadow: 0 0 10px rgb(204 2 236 / 50%);
+    border-radius: 5px;
 }
 .action , .home-container h4{
    text-align: center;
@@ -199,10 +213,20 @@ nav .toggle{
 }
 
 /* about  */
+.title .about-title::before{
+    content: attr(data-heading);
+    display: block;
+    font-size: 18px;
+    color: rgb(148, 6, 148);
+    border-bottom: 2px solid blueviolet;
+}
+
 .about .content , .skills-content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+.about .content{
+    justify-content: space-around;
 }
 .content .about-img{
     padding: 0 19px;
@@ -239,13 +263,23 @@ nav .toggle{
 }
 .about .content .my-info{
     max-width: 600px;
-   position: relative;
-   right: 10%;
+    background: linear-gradient(to left, rgb(249, 74, 255), rgb(158, 28, 209));
+    padding: 34px 34px;
+    border-radius: 10px 105px / 130px;
+    color: white;
+}
+.about .content .my-info h4{
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
              /* skills  */
 .skills-content{
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .skills-content .skills{
     width: calc(50% - 10px);
@@ -319,6 +353,8 @@ nav .toggle{
 /* project  */
 
 
+
+    
       /* toggling  */
 .about-container .tab-content{
     display: none;
@@ -345,7 +381,7 @@ nav .toggle{
 }
 .services-container{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns:repeat(3, max-content);
     justify-content: space-around;
     gap: 20px;
 }
@@ -354,6 +390,7 @@ nav .toggle{
     padding: 20px 40px;
     border-radius: 10%;
     margin-top: 30px;
+    position: relative;
 }
 .service-content .s-heading{
     text-align: center;
@@ -373,12 +410,72 @@ nav .toggle{
     bottom: 27px;
     letter-spacing: 1px;
 }
+.service-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(83, 23, 83, .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+.service-list.active{
+    visibility: visible;
+    opacity: 1;
+}
+.service-list .service-list-items{
+    position: relative;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    transition: .4s linear;
+}
+
+
+.service-list-items ul > *{
+    padding: 8px 0;
+    display: flex;
+    /* justify-content: space-around; */
+}
+.service-list-heading{
+    font-size: 22px;
+    color: rgba(34, 31, 31, .7);
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.service-list-items ul li p{
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+}
+.service-list-items ul li i{
+    position: relative;
+    top: 4px;
+    padding-right: 10px;
+    color: #7e6f6f;
+}
+.service-list .close-icon{
+    position: absolute;
+    right: 30px;
+    top: 13px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 .v-btn{
     text-align: end;
+    padding: 4px;
 }
 .v-btn .vMore-btn{
     cursor: pointer;
-    font-size: larger;
+    font-size: 23px;
    letter-spacing: 2px;
    color: #95003e;
    font-weight: bold;
@@ -389,6 +486,50 @@ nav .toggle{
     font-weight: bold;
 }
 
+
+/* contact  */
+.contact{
+    margin: 3rem 4rem;
+}
+.title .contact-title::before{
+    content: attr(data-heading);
+    display: block;
+    font-size: 18px;
+    color: rgb(148, 6, 148);
+    border-bottom: 2px solid blueviolet;
+}
+.contact-container, .massage-box{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact-box{
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+}
+.contact-field{
+    margin: 7px 14px;
+}
+.contact-field input, .massage-box textarea{
+    border: none;
+    padding: 10px 35px;
+    font-size: larger;
+    box-shadow: 0px 2px 1px 1px rgba(138, 140, 240, 0.4);
+    width: max-content;
+    border-radius: 5px;
+}.massage-box textarea{
+    width: fit-content;
+}
+.contact-heading{
+    padding: 6px 0;
+}
+.form-submit{
+    margin: 17px 0;
+}
 
 
 
@@ -460,11 +601,6 @@ nav .toggle{
  .about .content{
      flex-direction: column;
  }
- .about .content .my-info{
-     right: 0;
-     margin:  2rem 1rem;
-     padding: 2rem 0;
- }
 
   /* skills  */
   .skills-content{
@@ -477,13 +613,20 @@ nav .toggle{
   .services-container{
     grid-template-columns: auto auto;
 }
+
+/* contact  */
+.contact-box{
+    grid-template-columns: auto;
+}
+.massage-box textarea {
+    width: 100%;
+}
 }
 
-@media (max-width:580px){
+@media (max-width:680px){
     .about .content .my-info{
-    right: 0;
-    margin: 2rem 1rem;
-    padding: 1rem 1rem;
+        margin: 2rem 2rem;
+        padding: 2rem 3rem;
     }
     .about .content img{
         max-height: 210px;
@@ -496,7 +639,7 @@ nav .toggle{
         margin: 7px 0;
     }
     .content2 .tabs .tab-items span{
-      font-size: 16px;
+        font-size: 18px;
       margin: 8px 0;
       padding: 2px 4px;
     }
@@ -514,9 +657,10 @@ nav .toggle{
     padding: 4px 9px;
     border-radius: 12%;
     width: auto;
+    bottom: 26%;
     }
     .home-container h2{
-        font-size: 2.1rem;
+        font-size: 1.9rem;
     }
     .home-container p{
         font-size: 1rem;
@@ -528,5 +672,15 @@ nav .toggle{
     }
     .web-d{
         padding-bottom: 10px;
+    }
+}
+@media(max-width: 400px){
+    .about .content .my-info{
+        margin: 33px 41px;
+        padding: 42px 43px;
+        font-size: 15px;
+    }
+    .home img{
+        max-width: 245px;
     }
 }
