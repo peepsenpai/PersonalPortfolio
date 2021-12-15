@@ -23,14 +23,14 @@ navLink.forEach(n => n.addEventListener('click', actionLink))
 
 
 // hiring button 
-const  hirecontent = document.getElementById('hiring-content');
-function hireMeClick(){
-   hirecontent.classList.add('active')
-}
-function hireCancelClick(){
-    hirecontent.classList.remove('active')
+// const  hirecontent = document.getElementById('hiring-content');
+// function hireMeClick(){
+//    hirecontent.classList.add('active')
+// }
+// function hireCancelClick(){
+//     hirecontent.classList.remove('active')
 
-}
+// }
 
 
 // about section
@@ -109,14 +109,32 @@ closeBtn.forEach((cBtn)=>{
 
 
 
+// review section 
+const sliders = document.querySelectorAll('.review-box');
+let index = 0;
+function nextClick(){
+    sliders[index].classList.remove('active');
+    index = (index + 1) % sliders.length;
+    sliders[index].classList.add('active');
+}
+function prevClick(){
+    sliders[index].classList.remove('active');
+    index = (index + 1 + sliders.length) % sliders.length;
+    sliders[index].classList.add('active');
+}
+
+
+
 
 
 // animation 
-// window.sr = new ScrollReveal({origin:'top',distance: '80px', duration: 2000, reset: true});
-// sr.reveal('.home-container',{});
-// sr.reveal('.home-img',{delay:400});
+window.sr = new ScrollReveal({origin:'top',distance: '80px', duration: 2000, reset: true});
+sr.reveal('.home-container',{origin:'bottom'});
+sr.reveal('.home-img',{delay:400});
 
-// sr.reveal('.about-img',{delay:200});
-// sr.reveal('.my-info',{delay:300});
-// sr.reveal('.left-skill',{delay: 100});
-// sr.reveal('.right-skill',{delay: 100});
+sr.reveal('.about-img',{delay:200});
+sr.reveal('.my-info',{delay:300});
+sr.reveal('.left-skill',{delay: 100});
+sr.reveal('.right-skill',{delay: 200, origin: 'left', distance: '30px'});
+
+sr.reveal('.service-content',{delay: 100, origin:'right'})

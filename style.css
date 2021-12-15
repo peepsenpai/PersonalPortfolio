@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -161,7 +163,12 @@ nav .toggle{
 }.hiring-content.active{
     display: block;
 }
-
+.hire-me a{
+    color: white;
+}
+.hire-me:hover a{
+    color: black;
+}
 /* home  */
 .home{
     display: flex;
@@ -219,6 +226,7 @@ nav .toggle{
     font-size: 18px;
     color: rgb(148, 6, 148);
     border-bottom: 2px solid blueviolet;
+    font-family: 'Barlow', sans-serif;
 }
 
 .about .content , .skills-content{
@@ -267,6 +275,8 @@ nav .toggle{
     padding: 34px 34px;
     border-radius: 10px 105px / 130px;
     color: white;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 1px;
 }
 .about .content .my-info h4{
     text-align: center;
@@ -378,6 +388,7 @@ nav .toggle{
     padding: 4px 0;
     opacity: .8;
     color: rgb(54, 0, 59);
+    font-family: 'Barlow', sans-serif;
 }
 .services-container{
     display: grid;
@@ -487,16 +498,112 @@ nav .toggle{
 }
 
 
-/* contact  */
-.contact{
-    margin: 3rem 4rem;
+/* review  */
+.review-container{
+    position: relative;
+    perspective: 1000px;
 }
-.title .contact-title::before{
+.review{
+    margin: 3rem 15rem;
+}
+.review-content{
+    margin: 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title .review-title::before{
     content: attr(data-heading);
     display: block;
     font-size: 18px;
     color: rgb(148, 6, 148);
     border-bottom: 2px solid blueviolet;
+    font-family: 'Barlow', sans-serif;
+}
+.review-content .per-user{
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(204, 31, 167, 0.467);
+    width: 450px;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: slider .4s linear;
+}
+@keyframes slider{
+    0%{
+        transform: rotateY(180deg);
+    }
+
+}
+
+.review-content .per-user > *{
+    animation: peruser .3s linear .4s backwards;
+}
+@keyframes peruser{
+    0%{
+        opacity: 0;
+        transform: scaleY(.5);
+    }
+}
+.per-user .quote-icon{
+    position: absolute;
+    font-size: 38px;
+    color: violet;
+    right: 2vw;
+}
+.per-user .user-head{
+    font-size: 20px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: rgb(88, 73, 168);
+    padding: 7px 10px;
+}
+.per-user .user-para{
+    text-align: center;
+    font-size: 15px;
+    padding: 4px;
+    font-weight: bold;
+    color: rgba(117, 109, 109, .7);
+    font-style: italic;
+}
+.per-user .review-stars{
+    text-align: center;
+    padding: 8px;
+    color: rgb(211, 23, 148);
+}
+.review-container .review-box{
+    display: none;
+}
+.review-container .review-box.active{
+    display: block;
+}
+
+
+.review-container #next, .review-container #prev{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    color: rebeccapurple;
+}
+.review-container #next{
+    right: 0;
+}
+
+/* contact  */
+.contact{
+    margin: 3rem 4rem;
+}
+.title .contact-title::after{
+    content: attr(data-heading);
+    display: block;
+    font-size: 18px;
+    color: rgb(148, 6, 148);
+    border-top: 2px solid blueviolet;
+    font-family: 'Barlow', sans-serif;
 }
 .contact-container, .massage-box{
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -529,6 +636,85 @@ nav .toggle{
 }
 .form-submit{
     margin: 17px 0;
+}
+
+
+/* footer  */
+.footer{
+    margin: 3rem 6rem;
+}
+.footer-row{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.footer-content .logo img{
+    max-width: 35px;
+}
+.footer-content .logo span{
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    top: 1vh;
+    opacity: .77;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.footer-content{
+    padding: 10px 30px;
+}
+.footer-content p{
+    padding: 18px 0;
+    font-size: 15px;
+}
+.footer-content .social-icon{
+    display: flex;
+}
+.social-icon i{
+    padding: 0 5px;
+}
+.footer-box h3{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.addre-span{
+    font-size: 16px;
+    font-weight: bold;
+    opacity: .7;
+}
+.addr1{
+    color: #b410ac;
+    font-size: 15px;
+    padding-left: 3px;
+}
+.div-addr a{
+    font-size: 15px;
+    padding-left: 9px;
+}
+.div-addr{
+    padding: 6px 0 ;
+}
+.f-link a{
+    font-size: 16px;
+}
+.f-link-item{
+    padding: 5px 0 ;
+
+}
+.newsletter-form input{
+    border: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(53, 51, 51,.6);
+}
+.subscribe{
+    font-family: 'Barlow', sans-serif;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.subscribe i{
+    font-size: 12px;
+    padding-left: 5px;
 }
 
 
@@ -614,12 +800,26 @@ nav .toggle{
     grid-template-columns: auto auto;
 }
 
+/* review */
+.review {
+    margin: 3rem 6rem;
+}
+
 /* contact  */
 .contact-box{
     grid-template-columns: auto;
 }
 .massage-box textarea {
     width: 100%;
+}
+
+/* footer  */
+.footer-row{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.footer{
+    margin: 1rem;
 }
 }
 
@@ -673,6 +873,22 @@ nav .toggle{
     .web-d{
         padding-bottom: 10px;
     }
+
+    /* review  */
+    .review{
+        margin: 1rem;
+    }
+
+    /* contact  */
+    .contact{
+        margin: 1rem;
+    }
+
+    /* footer  */
+    .footer-row{
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
 @media(max-width: 400px){
     .about .content .my-info{
@@ -682,5 +898,12 @@ nav .toggle{
     }
     .home img{
         max-width: 245px;
+    }
+}
+
+@media (max-width:330px) {
+    .contact-field input{
+        padding: 10px;
+        font-size: small;
     }
 }
